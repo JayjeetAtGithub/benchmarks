@@ -80,7 +80,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.client_payload.ref }}
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.PAT_FOR_PUSH }}
           repository: uccross/skyhookdm-arrow
           body: | 
             Build output of commit ${{ github.sha }}
