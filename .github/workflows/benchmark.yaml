@@ -73,14 +73,14 @@ jobs:
           git commit -m "JSONS added" -a
           git push https://$USERNAME:$REPO_KEY@github.com/uccross/skyhookdm-benchmarks.git
         env:
-          REPO_KEY: ${{secrets.PAT_FOR_PUSH}}
+          REPO_KEY: ${{ secrets.PAT }}
           USERNAME: rahul799
 
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.client_payload.ref }}
-          token: ${{ secrets.PAT_FOR_PUSH }}
+          token: ${{ secrets.PAT }}
           repository: uccross/skyhookdm-arrow
           body: | 
             Build output of commit ${{ github.sha }}
